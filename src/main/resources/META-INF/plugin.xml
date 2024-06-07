@@ -1,8 +1,7 @@
 <idea-plugin>
     <id>com.crzsc.FlutterAssetsGenerator</id>
-    <name>FlutterAssetsGenerator</name>
-    <vendor email="cr1992@qq.com" url="https://github.com/cr1992/FlutterAssetsGenerator">Ray&amp;Zsc</vendor>
-
+    <name>AssetsHelper</name>
+    <vendor>power by TangXiaoTian</vendor>
     <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
          on how to target different products -->
     <depends>com.intellij.modules.json</depends>
@@ -19,7 +18,7 @@
         <applicationService serviceImplementation="com.crzsc.plugin.setting.PluginSetting"/>
         <applicationConfigurable parentId="tools" instance="com.crzsc.plugin.setting.AppSettingsConfigurable"
                                  id="com.crzsc.plugin.setting.AppSettingsConfigurable"
-                                 displayName="FlutterAssetsGenerator"/>
+                                 displayName="AssetsHelper"/>
         <!--        行标记-->
         <codeInsight.lineMarkerProvider language="Dart"
                                         implementationClass="com.crzsc.plugin.provider.AssetsLineMarkerProvider"/>
@@ -32,8 +31,8 @@
 
     <actions>
         <!-- Add your actions here -->
-        <action id="action.generate" class="com.crzsc.plugin.actions.GenerateAction" text="Generate Flutter Assets"
-                description="Generate Assets class ">
+        <action id="action.generate" class="com.crzsc.plugin.actions.GenerateAction" text="Generate Assets Index"
+                description="Generate assets index">
             <add-to-group group-id="BuildMenu" anchor="last"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt g"/>
         </action>

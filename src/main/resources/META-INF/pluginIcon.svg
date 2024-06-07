@@ -5,9 +5,9 @@
      viewBox="0 0 1080 1080" style="enable-background:new 0 0 1080 1080;" xml:space="preserve">
 <style type="text/css">
 	.st0{clip-path:url(#SVGID_2_);}
-	.st1{fill:#39CEFD;}
-	.st2{clip-path:url(#SVGID_4_);fill:#39CEFD;}
-	.st3{clip-path:url(#SVGID_6_);fill:#03569B;}
+	.st1{fill:#FFA500;}
+	.st2{clip-path:url(#SVGID_4_);fill:#FF6347;}
+	.st3{clip-path:url(#SVGID_6_);fill:#00FF00;}
 	.st4{clip-path:url(#SVGID_8_);fill:url(#SVGID_9_);}
 	.st5{clip-path:url(#SVGID_11_);}
 	.st6{fill:#16B9FD;}
@@ -75,7 +75,7 @@
 				<use xlink:href="#SVGID_10_" style="overflow:visible;"/>
 			</clipPath>
             <g class="st5">
-				
+
 					<rect x="407.1" y="666.7" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -399.0023 596.0814)"
                           class="st6" width="226" height="226"/>
 			</g>

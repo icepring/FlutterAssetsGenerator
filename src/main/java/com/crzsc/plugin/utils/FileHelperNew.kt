@@ -214,7 +214,7 @@ object FileHelperNew {
 
     fun getGeneratedFileName(config: ModulePubSpecConfig): String =
         readSetting(config, Constants.KEY_OUTPUT_FILENAME) as? String ?: PluginSetting.instance.fileName
-        ?: Constants.DEFAULT_CLASS_NAME.lowercase()
+        ?: Constants.DEFAULT_CLASS_NAME.toLowerCase()
 
 }
 

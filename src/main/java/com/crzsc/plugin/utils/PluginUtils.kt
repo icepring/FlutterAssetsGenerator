@@ -63,7 +63,7 @@ object PluginUtils {
         return if (this.isEmpty()) {
             this
         } else {
-            "${this[0].lowercase()}${this.subSequence(1, this.length)}"
+            "${this[0].toLowerCase()}${this.subSequence(1, this.length)}"
         }
     }
 
@@ -74,7 +74,7 @@ object PluginUtils {
         return if (this.isEmpty()) {
             this
         } else {
-            "${this[0].uppercase()}${this.subSequence(1, this.length)}"
+            "${this[0].toUpperCase()}${this.subSequence(1, this.length)}"
         }
     }
 }
