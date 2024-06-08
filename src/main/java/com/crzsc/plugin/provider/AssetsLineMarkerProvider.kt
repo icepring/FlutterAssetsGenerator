@@ -48,6 +48,8 @@ class AssetsLineMarkerProvider : LineMarkerProvider {
                 assetName, true
             ) || element.containingFile.name.equals(
                 "assets.dart", true
+            )|| element.containingFile.name.equals(
+                "r.dart", true
             )
             if (filenameCorrect) {
 //                println("filenameCorrect showMakeByType : $element")

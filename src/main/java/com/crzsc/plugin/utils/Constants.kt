@@ -1,5 +1,7 @@
 package com.crzsc.plugin.utils
 
+import org.jetbrains.kotlin.konan.file.File
+
 object Constants {
     /**
      * 配置map的key
@@ -45,8 +47,8 @@ object Constants {
     /**
      * 默认目录
      */
-    const val DEFAULT_OUTPUT_DIR = "generated"
-    const val DEFAULT_CLASS_NAME = "Assets"
+    val DEFAULT_OUTPUT_DIR = "generated${File.separator}assets"
+    const val DEFAULT_CLASS_NAME = "R"
 
     const val DEFAULT_FILENAME_SPLIT_PATTERN = "[-_]"
 }

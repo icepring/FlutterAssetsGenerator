@@ -2,18 +2,11 @@ It's a plugin that generates an asset index which we can easily find.It can be u
 
 ## How to use
 
-### 1.Configuring paths in pubspec.yaml
-
-Plugin now supports automatic configuration:
-- Right-click on folder or file, then click
-  <br>`Flutter: Configuring Paths`.
-<br>![](https://tva1.sinaimg.cn/large/008vxvgGly1h9h9nxz6ttg30ed0ootl5.gif)
-### 2.Generate file
+.Generate file
 
 You can generate file by these ways:
 
-- `Build` => `Generate Flutter Assets`
-<br>![](https://tva1.sinaimg.cn/large/008vxvgGly1h9h9rnd51mg30hv0orjz6.gif)
+- `Build` => `Generate Assets Index`
 - Press `Option`(mac)/`Alt`(win) + `G`,It will generate assets.dart on lib/generated.
 
 Simply use it like:
@@ -27,16 +20,9 @@ Image.asset(
         )
 ```
 
-### 3.Extras
-
-- You can locate file quickly by click line-marker.
-  <br>![](https://tva1.sinaimg.cn/large/008vxvgGly1h9h9vyjccyg30hv0ordpz.gif)
-- Plugin will observe your changes on assets path and update file.
-  <br><img style="max-width:100%;overflow:hidden;" src="https://tva1.sinaimg.cn/large/008vxvgGly1h9h6yqqx09g312l0q4k4n.gif" alt="">
-
 ## Settings
 ### Global
-`Preferences` => `Tools` => `FlutterAssetsGenerator`
+`Preferences` => `Tools` => `AssetsHelper`
 ### Module based
 You can change default settings by add following contents in your `pubspec.yaml`.
 
