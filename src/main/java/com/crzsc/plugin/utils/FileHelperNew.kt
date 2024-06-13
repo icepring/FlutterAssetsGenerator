@@ -31,6 +31,7 @@ object FileHelperNew {
                 val moduleDir = module.guessModuleDir()
                 if (moduleDir != null) {
                     getPubSpecConfig(module)?.let {
+                        println("getPubSpecConfig$it")
                         folders.add(it)
                     }
                 }
@@ -74,12 +75,14 @@ object FileHelperNew {
                                         }
                                         val assetVFile = moduleDir.findChild(assetsPath)
                                             ?: moduleDir.createChildDirectory(this, assetsPath)
-                                        if (!assetVFiles.contains(assetVFile)) {
+                                        if (!assetVFiles.contains(assetVFile) ) {
+                                            println("assetVFile:$assetVFile")
                                             assetVFiles.add(assetVFile)
                                         }
                                     } else {
                                         if (!assetVFiles.contains(it)) {
-                                            assetVFiles.add(it)
+                                            println("it:$it")
+//                                            assetVFiles.add(it)
                                         }
                                     }
                                 }
@@ -128,7 +131,7 @@ object FileHelperNew {
 
     fun isWithLeadingWithPackageName(config: ModulePubSpecConfig): Boolean {
         return readSetting(config, Constants.KEY_LEADING_WITH_PACKAGE_NAME) as Boolean?
-                ?: PluginSetting.instance.leadingWithPackageName
+            ?: PluginSetting.instance.leadingWithPackageName
     }
 
     /**
@@ -230,8 +233,8 @@ data class ModulePubSpecConfig(
 ) {
     fun getLeadingWithPackageNameIfChecked(): String {
         if (FileHelperNew.isWithLeadingWithPackageName(this)) {
-            return  "packages/${map["name"]}/"
+            return "packages/${map["name"]}/"
         }
-        return  "";
+        return "";
     }
 }

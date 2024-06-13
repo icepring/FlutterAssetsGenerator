@@ -121,7 +121,10 @@ class FileGenerator(private val project: Project) {
                     }
                 }
                 !it.name.startsWith('.') && checkName(it.name) && !pathIgnore
+            }.filter {
+                it.path.contains("images")
             }.forEach {
+                println("dirs:$it")
                 if (it.isDirectory) {
                     generateFileMap(it, config, map, ignorePath)
                 } else {
