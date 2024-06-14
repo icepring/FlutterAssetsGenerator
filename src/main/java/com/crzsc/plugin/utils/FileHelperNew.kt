@@ -76,12 +76,10 @@ object FileHelperNew {
                                         val assetVFile = moduleDir.findChild(assetsPath)
                                             ?: moduleDir.createChildDirectory(this, assetsPath)
                                         if (!assetVFiles.contains(assetVFile) ) {
-                                            println("assetVFile:$assetVFile")
                                             assetVFiles.add(assetVFile)
                                         }
                                     } else {
                                         if (!assetVFiles.contains(it)) {
-                                            println("it:$it")
 //                                            assetVFiles.add(it)
                                         }
                                     }

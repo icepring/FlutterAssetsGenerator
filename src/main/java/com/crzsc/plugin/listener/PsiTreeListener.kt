@@ -55,6 +55,9 @@ class PsiTreeListener(private val project: Project) : PsiTreeChangeListener {
     }
 
     private fun handleEvent(event: PsiTreeChangeEvent) {
+        if (event.file != null || event.child == null) {
+            return
+        }
         val assets = FileHelperNew.getAssets(project)
         for (config in assets) {
             if (FileHelperNew.isAutoDetectionEnable(config)) {
