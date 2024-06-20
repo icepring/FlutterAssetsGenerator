@@ -23,6 +23,10 @@
         <codeInsight.lineMarkerProvider language="Dart"
                                         implementationClass="com.crzsc.plugin.provider.AssetsLineMarkerProvider"/>
         <postStartupActivity  implementation="com.crzsc.plugin.listener.MapModificationListener"/>
+
+<!--        <projectConfigurable-->
+<!--                groupId="editor"-->
+<!--                instance="andrasferenczi.configuration.DataClassConfigurable"/>-->
     </extensions>
 
     <applicationListeners>
@@ -43,5 +47,35 @@
         <!--                icon="AllIcons.Actions.BuildLoadChanges">-->
         <!--            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="WeighingNewGroup"/>-->
         <!--        </action>-->
+
+<!--        <action id="andrasferenczi.action.NamedArgumentConstructorAction"-->
+<!--                class="andrasferenczi.action.NamedArgumentConstructorAction"-->
+<!--                text="Named Argument Constructor">-->
+<!--            <add-to-group group-id="GenerateGroup"-->
+<!--                          anchor="after"-->
+<!--                          relative-to-action="Generate.Named.Constructor.Dart"/>-->
+<!--        </action>-->
+<!--        <action id="andrasferenczi.action.DartCopyWithAction"-->
+<!--                class="andrasferenczi.action.DartCopyWithAction"-->
+<!--                text="Copy">-->
+<!--            <add-to-group group-id="GenerateGroup"-->
+<!--                          anchor="after"-->
+<!--                          relative-to-action="Generate.Named.Constructor.Dart"/>-->
+<!--        </action>-->
+        <action id="andrasferenczi.action.MapAction"
+                class="andrasferenczi.action.MapAction"
+                text="generrate Map">
+            <add-to-group group-id="GenerateGroup"
+                          anchor="after"
+                          relative-to-action="Generate.Named.Constructor.Dart"/>
+        </action>
+<!--        <action id="andrasferenczi.action.FullDataAction"-->
+<!--                class="andrasferenczi.action.FullDataAction"-->
+<!--                text="Data Class Section">-->
+<!--            <add-to-group group-id="GenerateGroup"-->
+<!--                          anchor="after"-->
+<!--                          relative-to-action="andrasferenczi.action.MapAction"/>-->
+<!--        </action>-->
+
     </actions>
 </idea-plugin>
