@@ -18,7 +18,8 @@ class PluginSetting : PersistentStateComponent<PluginSetting> {
     var filenameSplitPattern: String? = Constants.DEFAULT_FILENAME_SPLIT_PATTERN
     var namedWithParent = true
     var autoDetection = true
-    var leadingWithPackageName = false;
+    var leadingWithPackageName = false
+    var gitPreCommit = false
     override fun getState(): PluginSetting {
         return this
     }

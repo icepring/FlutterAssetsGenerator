@@ -22,6 +22,8 @@ fun createMapTemplate(
         TemplateType.MapTemplate.templateKey,
         TemplateConstants.DART_TEMPLATE_GROUP
     ).apply {
+        addOverride()
+        addNewLine()
         addToMap(params)
         addNewLine()
         addNewLine()
@@ -90,7 +92,7 @@ private fun Template.addToMap(params: MapTemplateParams) {
 
                 addTextSegment(":")
                 addSpace()
-                addTextSegment("this.")
+//                addTextSegment("this.")
                 addTextSegment(it.variableName)
                 addComma()
                 addNewLine()

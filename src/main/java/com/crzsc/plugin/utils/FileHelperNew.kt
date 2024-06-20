@@ -4,6 +4,7 @@ import com.crzsc.plugin.setting.PluginSetting
 import com.intellij.openapi.module.Module
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessModuleDir
+import com.intellij.openapi.project.modifyModules
 import com.intellij.openapi.vfs.VirtualFile
 import io.flutter.pub.PubRoot
 import io.flutter.utils.FlutterModuleUtils
@@ -25,6 +26,7 @@ object FileHelperNew {
     @JvmStatic
     fun getAssets(project: Project): List<ModulePubSpecConfig> {
         val modules = project.allModules()
+
         val folders = mutableListOf<ModulePubSpecConfig>()
         for (module in modules) {
             if (FlutterModuleUtils.isFlutterModule(module)) {
@@ -130,6 +132,11 @@ object FileHelperNew {
     fun isWithLeadingWithPackageName(config: ModulePubSpecConfig): Boolean {
         return readSetting(config, Constants.KEY_LEADING_WITH_PACKAGE_NAME) as Boolean?
             ?: PluginSetting.instance.leadingWithPackageName
+    }
+
+    fun isWithGitPreCommit(config: ModulePubSpecConfig): Boolean {
+        return readSetting(config, Constants.KEY_GIT_PRE_COMMIT) as Boolean?
+            ?: PluginSetting.instance.gitPreCommit
     }
 
     /**

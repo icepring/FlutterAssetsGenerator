@@ -29,6 +29,8 @@ object Constants {
 
     const val KEY_LEADING_WITH_PACKAGE_NAME = "leading_with_package_name"
 
+    const val KEY_GIT_PRE_COMMIT = "git_pre_commit"
+
     /**
      * 输出的文件名
      */

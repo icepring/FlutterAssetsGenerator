@@ -17,6 +17,7 @@ class AppSettingsComponent {
     private val autoDetection = JBCheckBox(message("settingsAutoDetection"))
     private val namedWithParent = JBCheckBox(message("settingsNamed"))
     private val leadingWithPackageName = JBCheckBox(message("settingsLeadingWithPackageName"))
+    private val gitPreCommit = JBCheckBox(message("gitPreCommit"))
 
     init {
         panel = FormBuilder.createFormBuilder()
@@ -27,6 +28,7 @@ class AppSettingsComponent {
             .addComponent(autoDetection, 1)
             .addComponent(namedWithParent, 1)
             .addComponent(leadingWithPackageName, 1)
+            .addComponent(gitPreCommit, 1)
             .addComponentFillVertically(JPanel(), 0)
             .panel
     }
@@ -89,5 +91,13 @@ class AppSettingsComponent {
 
     fun setLeadingWithPackageName(newStatus: Boolean) {
         leadingWithPackageName.isSelected = newStatus
+    }
+
+    fun getGitPreCommit(): Boolean {
+        return gitPreCommit.isSelected
+    }
+
+    fun setGitPreCommit(newStatus: Boolean) {
+        gitPreCommit.isSelected = newStatus
     }
 }

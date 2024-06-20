@@ -41,6 +41,7 @@ fun Template.addSpace() = this.addTextSegment(" ")
 fun Template.addComma() = this.addTextSegment(",")
 
 fun Template.addDot() = this.addTextSegment(".")
+fun Template.addOverride() = this.addTextSegment("@override")
 
 @Deprecated(
     "If 2 templates are combined, the anchor will not be placed at the right position. " +
