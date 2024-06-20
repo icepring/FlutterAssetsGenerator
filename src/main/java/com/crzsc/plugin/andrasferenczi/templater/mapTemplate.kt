@@ -79,7 +79,7 @@ private fun Template.addToMap(params: MapTemplateParams) {
             addNewLine()
 
             variables.forEach {
-                "'${it.mapKeyString}'".also { keyParam ->
+                "\"${it.mapKeyString}\"".also { keyParam ->
                     if (addKeyMapper) {
                         addTextSegment(TemplateConstants.KEYMAPPER_VARIABLE_NAME)
                         withParentheses {
@@ -90,7 +90,8 @@ private fun Template.addToMap(params: MapTemplateParams) {
                     }
                 }
 
-                addTextSegment(":")
+
+            addTextSegment(":")
                 addSpace()
 //                addTextSegment("this.")
                 addTextSegment(it.variableName)
