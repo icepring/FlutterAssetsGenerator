@@ -22,7 +22,7 @@
         <!--        行标记-->
         <codeInsight.lineMarkerProvider language="Dart"
                                         implementationClass="com.crzsc.plugin.provider.AssetsLineMarkerProvider"/>
-        <postStartupActivity  implementation="com.crzsc.plugin.listener.MapModificationListener"/>
+<!--        <postStartupActivity  implementation="com.crzsc.plugin.listener.MapModificationListener"/>-->
 
 <!--        <projectConfigurable-->
 <!--                groupId="editor"-->
@@ -44,6 +44,7 @@
             <add-to-group group-id="BuildMenu" anchor="last"/>
             <keyboard-shortcut keymap="$default" first-keystroke="alt g"/>
         </action>
+
         <!--        <action id="com.crzsc.plugin.actions.GenerateDirAction" class="com.crzsc.plugin.actions.GenerateDirAction"-->
         <!--                text="Flutter: Configuring Paths" description="Configuring Paths in pubspec.yaml"-->
         <!--                icon="AllIcons.Actions.BuildLoadChanges">-->
@@ -72,7 +73,24 @@
                           anchor="after"
                           relative-to-action="ImplementMethods"/>
         </action>
-<!--        <action id="andrasferenczi.action.FullDataAction"-->
+
+        <action id="actions."
+                class="andrasferenczi.action.MapAction"
+                icon="/icons/pluginIcon.svg"
+                text="getParameters">
+            <add-to-group group-id="GenerateGroup"
+                          anchor="after"
+                          relative-to-action="ImplementMethods"/>
+        </action>
+
+        <action id="action.color" class="com.crzsc.plugin.andrasferenczi.action.UpdateColorsAction" text="Generate Colors"
+                description="Generate Colors">
+            <add-to-group group-id="BuildMenu" anchor="last"/>
+            <keyboard-shortcut keymap="$default" first-keystroke="alt v"/>
+        </action>
+
+
+        <!--        <action id="andrasferenczi.action.FullDataAction"-->
 <!--                class="andrasferenczi.action.FullDataAction"-->
 <!--                text="Data Class Section">-->
 <!--            <add-to-group group-id="GenerateGroup"-->

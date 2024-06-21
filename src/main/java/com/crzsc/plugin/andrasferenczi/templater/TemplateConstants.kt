@@ -7,6 +7,7 @@ object TemplateConstants {
 
     const val MAP_VARIABLE_NAME = "map"
     const val TO_MAP_METHOD_NAME = "getParameters"
+    const val GENERATE_COLOR_METHOD_NAME = "_showColor"
     const val FROM_MAP_METHOD_NAME = "fromMap"
 
     const val KEYMAPPER_VARIABLE_NAME = "keyMapper"

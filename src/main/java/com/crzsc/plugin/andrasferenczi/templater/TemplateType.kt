@@ -12,5 +12,6 @@ enum class TemplateType(
     Equals("equals"),
     HashCode("hashcode"),
 
-    Comment("comment")
+    Comment("comment"),
+    Color("color")
 }

@@ -7,7 +7,8 @@ class PerformAction(
     // Some objects might be deleted
     val deleteAction: (() -> Unit)?,
     // The code that will be added
-    val templatesToAdd: List<Template>
+    val templatesToAdd: List<Template>,
+    val offset: Boolean = false
 ) {
 
     constructor(

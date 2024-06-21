@@ -5,11 +5,14 @@ import andrasferenczi.action.init.ActionData
 import andrasferenczi.action.init.tryCreateActionData
 import andrasferenczi.action.init.tryExtractDartClassDefinition
 import andrasferenczi.ext.*
+import com.crzsc.plugin.andrasferenczi.ext.findLineOffset
 import com.intellij.codeInsight.template.TemplateManager
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.psi.PsiDocumentManager
 import com.jetbrains.lang.dart.psi.DartClassDefinition
+import org.jetbrains.kotlin.idea.core.moveCaret
+import org.jetbrains.kotlin.idea.util.ifFalse
 
 abstract class BaseAnAction : AnAction() {
 
@@ -31,7 +34,7 @@ abstract class BaseAnAction : AnAction() {
             dartClass
         ) ?: return
 
-        val (project, editor, _, _) = actionData
+        val (project, editor, dartFile, _) = actionData
 
         val templateManager = TemplateManager.getInstance(project)
 
@@ -44,18 +47,49 @@ abstract class BaseAnAction : AnAction() {
             }
 
             val templates = performAction.templatesToAdd
+            val offset = performAction.offset
 
-            editor.setCaretToEndOfTheClass(dartClass)
+
+            if (!offset) {
+                editor.setCaretToEndOfTheClass(dartClass)
+            }
 
             // Todo: Set caret at the end of each template (?)
 
-            templateManager.startTemplate(editor, templateManager.createSeparatorTemplate())
+            if (!offset) {
+                templateManager.startTemplate(editor, templateManager.createSeparatorTemplate())
+            }
 
-            templates.forEachIndexed { index, template ->
-                templateManager.startTemplate(editor, template)
+            templates
+                .filter { it.templateText.isNotEmpty() }
+                .forEachIndexed { index, template ->
+                if (offset) {
+                    if (dartClass.name == "AppColorsKey") {
+                        val start = if (index == 0) {
+                            "static const Map<String, Color> whiteColorsInfo = {"
+                        } else {
+                            "class ColorsExt {"
+                        }
+                        val end = if (index == 0) {
+                            "}"
+                        } else {
+                            "_showColor(AppColorsKey"
+                        }
+                        dartFile.findLineOffset(start, end).let {
+                            if (it > 0) {
+                                editor.moveCaret(it)
+                            }
+                        }
+                        templateManager.startTemplate(editor, template)
+                    }
+                } else {
+                    templateManager.startTemplate(editor, template)
+                }
 
                 if (index != templates.lastIndex) {
-                    templateManager.startTemplate(editor, templateManager.createSeparatorTemplate())
+                    if (!offset) {
+                        templateManager.startTemplate(editor, templateManager.createSeparatorTemplate())
+                    }
                 }
             }
 
