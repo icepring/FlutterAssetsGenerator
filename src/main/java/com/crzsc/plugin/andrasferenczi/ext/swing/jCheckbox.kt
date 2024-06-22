@@ -1,4 +1,4 @@
-package andrasferenczi.ext.swing
+package com.crzsc.plugin.andrasferenczi.ext.swing
 
 import java.awt.event.ItemEvent
 import javax.swing.JCheckBox

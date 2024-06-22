@@ -1,6 +1,6 @@
-package andrasferenczi.action.utils
+package com.crzsc.plugin.andrasferenczi.action.utils
 
-import andrasferenczi.utils.mergeCalls
+import com.crzsc.plugin.andrasferenczi.utils.mergeCalls
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.Messages
 import com.jetbrains.lang.dart.psi.DartClass

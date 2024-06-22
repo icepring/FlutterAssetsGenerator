@@ -1,4 +1,4 @@
-package andrasferenczi.declaration
+package com.crzsc.plugin.andrasferenczi.declaration
 
 enum class DeclarationModifier(val text: String) {
     Final("final"),

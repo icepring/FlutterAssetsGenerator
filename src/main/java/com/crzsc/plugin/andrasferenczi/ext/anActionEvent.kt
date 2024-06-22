@@ -1,4 +1,4 @@
-package andrasferenczi.ext
+package com.crzsc.plugin.andrasferenczi.ext
 
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.openapi.actionSystem.CommonDataKeys

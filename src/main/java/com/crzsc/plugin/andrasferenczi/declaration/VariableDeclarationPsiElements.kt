@@ -1,6 +1,6 @@
-package andrasferenczi.declaration
+package com.crzsc.plugin.andrasferenczi.declaration
 
-import andrasferenczi.DartFileNotWellFormattedException
+import com.crzsc.plugin.andrasferenczi.DartFileNotWellFormattedException
 import com.intellij.psi.impl.source.tree.LeafPsiElement
 import com.jetbrains.lang.dart.psi.DartComponentName
 import com.jetbrains.lang.dart.psi.DartType

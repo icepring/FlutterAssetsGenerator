@@ -1,6 +1,6 @@
-package andrasferenczi.traversal
+package com.crzsc.plugin.andrasferenczi.traversal
 
-import andrasferenczi.ext.psi.allChildren
+import com.crzsc.plugin.andrasferenczi.ext.psi.allChildren
 import com.intellij.psi.PsiElement
 import java.lang.RuntimeException
 

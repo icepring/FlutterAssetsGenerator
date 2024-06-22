@@ -1,4 +1,4 @@
-package andrasferenczi.action.utils
+package com.crzsc.plugin.andrasferenczi.action.utils
 
 import com.jetbrains.lang.dart.psi.DartClass
 

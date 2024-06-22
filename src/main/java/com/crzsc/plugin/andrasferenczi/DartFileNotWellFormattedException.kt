@@ -1,4 +1,4 @@
-package andrasferenczi
+package com.crzsc.plugin.andrasferenczi
 
 import java.lang.RuntimeException
 

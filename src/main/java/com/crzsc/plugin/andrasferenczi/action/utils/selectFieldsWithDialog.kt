@@ -1,8 +1,8 @@
-package andrasferenczi.action.utils
+package com.crzsc.plugin.andrasferenczi.action.utils
 
-import andrasferenczi.declaration.DeclarationExtractor
-import andrasferenczi.declaration.VariableDeclaration
-import andrasferenczi.dialog.GenerateDialog
+import com.crzsc.plugin.andrasferenczi.declaration.DeclarationExtractor
+import com.crzsc.plugin.andrasferenczi.declaration.VariableDeclaration
+import com.crzsc.plugin.andrasferenczi.dialog.GenerateDialog
 import com.intellij.openapi.project.Project
 import com.jetbrains.lang.dart.psi.DartClassDefinition
 

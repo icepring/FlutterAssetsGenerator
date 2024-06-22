@@ -1,19 +1,18 @@
 package com.crzsc.plugin.andrasferenczi.action
 
-import andrasferenczi.action.StaticActionProcessor
-import andrasferenczi.action.data.GenerationData
-import andrasferenczi.action.data.PerformAction
-import andrasferenczi.action.init.ActionData
-import andrasferenczi.configuration.ConfigurationDataManager
-import andrasferenczi.declaration.DeclarationExtractor
-import andrasferenczi.declaration.fullTypeName
-import andrasferenczi.declaration.isNullable
-import andrasferenczi.declaration.variableName
-import andrasferenczi.ext.psi.extractClassName
-import andrasferenczi.templater.AliasedVariableTemplateParam
-import andrasferenczi.templater.AliasedVariableTemplateParamImpl
-import andrasferenczi.templater.ColorTemplateParams
-import andrasferenczi.templater.createColorTemplate
+import com.crzsc.plugin.andrasferenczi.action.data.GenerationData
+import com.crzsc.plugin.andrasferenczi.action.data.PerformAction
+import com.crzsc.plugin.andrasferenczi.action.init.ActionData
+import com.crzsc.plugin.andrasferenczi.configuration.ConfigurationDataManager
+import com.crzsc.plugin.andrasferenczi.declaration.DeclarationExtractor
+import com.crzsc.plugin.andrasferenczi.declaration.fullTypeName
+import com.crzsc.plugin.andrasferenczi.declaration.isNullable
+import com.crzsc.plugin.andrasferenczi.declaration.variableName
+import com.crzsc.plugin.andrasferenczi.ext.psi.extractClassName
+import com.crzsc.plugin.andrasferenczi.templater.AliasedVariableTemplateParam
+import com.crzsc.plugin.andrasferenczi.templater.AliasedVariableTemplateParamImpl
+import com.crzsc.plugin.andrasferenczi.templater.ColorTemplateParams
+import com.crzsc.plugin.andrasferenczi.templater.createColorTemplate
 import com.crzsc.plugin.andrasferenczi.ext.contains
 import com.intellij.codeInsight.template.TemplateManager
 import com.intellij.openapi.actionSystem.AnActionEvent
@@ -27,7 +26,6 @@ class UpdateColorsAction : BaseAnAction() {
         dartClass: DartClassDefinition
     ): PerformAction {
         val declarations = DeclarationExtractor.extractDeclarationsFromClass(dartClass)
-        log.debug("------------start$declarations------------------")
 
         return Companion.processAction(
             GenerationData(actionData, dartClass, declarations)
@@ -35,7 +33,6 @@ class UpdateColorsAction : BaseAnAction() {
     }
 
     companion object : StaticActionProcessor {
-        val log = Logger.getInstance(UpdateColorsAction::class.java)
         override fun processAction(generationData: GenerationData): PerformAction {
             val (actionData, dartClass, declarations) = generationData
 
@@ -63,7 +60,6 @@ class UpdateColorsAction : BaseAnAction() {
                     variables = variableNames
                 )
             )
-            log.debug("------------${variableNames}------------------")
             return PerformAction(
                 null,
                 template, true

@@ -1,6 +1,6 @@
-package andrasferenczi.configuration
+package com.crzsc.plugin.andrasferenczi.configuration
 
-import andrasferenczi.templater.TemplateConstants
+import com.crzsc.plugin.andrasferenczi.templater.TemplateConstants
 
 // Input
 // Default values

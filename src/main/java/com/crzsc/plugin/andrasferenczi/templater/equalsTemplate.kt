@@ -1,6 +1,6 @@
-package andrasferenczi.templater
+package com.crzsc.plugin.andrasferenczi.templater
 
-import andrasferenczi.ext.*
+import com.crzsc.plugin.andrasferenczi.ext.*
 import com.intellij.codeInsight.template.Template
 import com.intellij.codeInsight.template.TemplateManager
 

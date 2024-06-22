@@ -1,4 +1,4 @@
-package andrasferenczi.traversal
+package com.crzsc.plugin.andrasferenczi.traversal
 
 import java.util.*
 

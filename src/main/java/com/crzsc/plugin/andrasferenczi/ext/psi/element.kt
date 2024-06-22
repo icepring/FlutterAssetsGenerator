@@ -1,7 +1,7 @@
-package andrasferenczi.ext.psi
+package com.crzsc.plugin.andrasferenczi.ext.psi
 
-import andrasferenczi.traversal.TraversalType
-import andrasferenczi.traversal.createPsiFilterTraversal
+import com.crzsc.plugin.andrasferenczi.traversal.TraversalType
+import com.crzsc.plugin.andrasferenczi.traversal.createPsiFilterTraversal
 import com.intellij.psi.PsiElement
 
 /**

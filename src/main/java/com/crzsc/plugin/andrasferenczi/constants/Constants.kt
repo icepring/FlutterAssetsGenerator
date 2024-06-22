@@ -1,4 +1,4 @@
-package andrasferenczi.constants
+package com.crzsc.plugin.andrasferenczi.constants
 
 object Constants {
 

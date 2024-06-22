@@ -1,4 +1,4 @@
-package andrasferenczi.templater
+package com.crzsc.plugin.andrasferenczi.templater
 
 interface NamedVariableTemplateParam {
     // By the name it can be accessed with this.__name__

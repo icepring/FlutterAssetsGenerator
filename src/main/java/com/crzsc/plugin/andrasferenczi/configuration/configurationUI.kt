@@ -1,4 +1,4 @@
-package andrasferenczi.configuration
+package com.crzsc.plugin.andrasferenczi.configuration
 
 import java.awt.GridBagConstraints
 import java.awt.GridBagLayout

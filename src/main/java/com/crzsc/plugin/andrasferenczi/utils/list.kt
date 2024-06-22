@@ -1,4 +1,4 @@
-package andrasferenczi.utils
+package com.crzsc.plugin.andrasferenczi.utils
 
 /**
  * Takes the first item where the lambda first returns true

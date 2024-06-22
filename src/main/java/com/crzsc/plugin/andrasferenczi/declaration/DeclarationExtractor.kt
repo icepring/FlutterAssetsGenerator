@@ -1,10 +1,10 @@
-package andrasferenczi.declaration
+package com.crzsc.plugin.andrasferenczi.declaration
 
-import andrasferenczi.DartFileNotWellFormattedException
-import andrasferenczi.ext.psi.findChildrenByType
-import andrasferenczi.ext.psi.findFirstChildByType
-import andrasferenczi.ext.psi.iterateDFS
-import andrasferenczi.utils.split
+import com.crzsc.plugin.andrasferenczi.DartFileNotWellFormattedException
+import com.crzsc.plugin.andrasferenczi.ext.psi.findChildrenByType
+import com.crzsc.plugin.andrasferenczi.ext.psi.findFirstChildByType
+import com.crzsc.plugin.andrasferenczi.ext.psi.iterateDFS
+import com.crzsc.plugin.andrasferenczi.utils.split
 import com.intellij.psi.PsiElement
 import com.intellij.psi.impl.source.tree.LeafPsiElement
 import com.jetbrains.lang.dart.psi.*

@@ -1,4 +1,4 @@
-package andrasferenczi.templater
+package com.crzsc.plugin.andrasferenczi.templater
 
 object TemplateConstants {
     const val DART_TEMPLATE_GROUP = "Dart"

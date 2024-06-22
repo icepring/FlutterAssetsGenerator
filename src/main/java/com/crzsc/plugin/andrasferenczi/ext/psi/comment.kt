@@ -1,4 +1,4 @@
-package andrasferenczi.ext.psi
+package com.crzsc.plugin.andrasferenczi.ext.psi
 
 import com.intellij.psi.PsiComment
 import com.jetbrains.lang.dart.psi.DartClassBody

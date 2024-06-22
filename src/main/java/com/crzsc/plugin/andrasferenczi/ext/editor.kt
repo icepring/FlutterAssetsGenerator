@@ -1,10 +1,10 @@
-package andrasferenczi.ext
+package com.crzsc.plugin.andrasferenczi.ext
 
-import andrasferenczi.DartFileNotWellFormattedException
-import andrasferenczi.ext.psi.allChildren
-import andrasferenczi.ext.psi.body
-import andrasferenczi.ext.psi.findChildrenByType
-import andrasferenczi.ext.psi.mySiblings
+import com.crzsc.plugin.andrasferenczi.DartFileNotWellFormattedException
+import com.crzsc.plugin.andrasferenczi.ext.psi.allChildren
+import com.crzsc.plugin.andrasferenczi.ext.psi.body
+import com.crzsc.plugin.andrasferenczi.ext.psi.findChildrenByType
+import com.crzsc.plugin.andrasferenczi.ext.psi.mySiblings
 import com.intellij.openapi.editor.Editor
 import com.intellij.psi.PsiElement
 import com.intellij.psi.PsiWhiteSpace

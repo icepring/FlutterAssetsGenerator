@@ -8,7 +8,7 @@ import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory
 import com.intellij.openapi.vfs.VirtualFile
 import org.jetbrains.kotlin.idea.util.projectStructure.allModules
 
-class LineFeedCheckinHandlerFactory : CheckinHandlerFactory() {
+class LineBreakCheckinHandlerFactory : CheckinHandlerFactory() {
     override fun createHandler(panel: CheckinProjectPanel, commitContext: CommitContext): CheckinHandler {
 
         return object : CheckinHandler() {

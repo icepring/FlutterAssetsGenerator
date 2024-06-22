@@ -1,4 +1,4 @@
-package andrasferenczi.configuration
+package com.crzsc.plugin.andrasferenczi.configuration
 
 import javax.swing.JCheckBox
 import javax.swing.JComponent

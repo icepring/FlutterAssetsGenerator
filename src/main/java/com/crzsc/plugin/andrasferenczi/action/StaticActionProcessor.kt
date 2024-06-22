@@ -1,7 +1,7 @@
-package andrasferenczi.action
+package com.crzsc.plugin.andrasferenczi.action
 
-import andrasferenczi.action.data.GenerationData
-import andrasferenczi.action.data.PerformAction
+import com.crzsc.plugin.andrasferenczi.action.data.GenerationData
+import com.crzsc.plugin.andrasferenczi.action.data.PerformAction
 
 interface StaticActionProcessor {
 

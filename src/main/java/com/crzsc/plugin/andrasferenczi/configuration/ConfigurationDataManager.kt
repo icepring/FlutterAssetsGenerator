@@ -1,4 +1,4 @@
-package andrasferenczi.configuration
+package com.crzsc.plugin.andrasferenczi.configuration
 
 import com.intellij.ide.util.PropertiesComponent
 import com.intellij.openapi.project.Project

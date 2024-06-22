@@ -1,7 +1,7 @@
-package andrasferenczi.action.data
+package com.crzsc.plugin.andrasferenczi.action.data
 
-import andrasferenczi.action.init.ActionData
-import andrasferenczi.declaration.VariableDeclaration
+import com.crzsc.plugin.andrasferenczi.action.init.ActionData
+import com.crzsc.plugin.andrasferenczi.declaration.VariableDeclaration
 import com.jetbrains.lang.dart.psi.DartClassDefinition
 
 data class GenerationData(

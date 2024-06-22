@@ -1,7 +1,7 @@
-package andrasferenczi.dialog
+package com.crzsc.plugin.andrasferenczi.dialog
 
-import andrasferenczi.declaration.VariableDeclaration
-import andrasferenczi.declaration.canBeAssignedFromConstructor
+import com.crzsc.plugin.andrasferenczi.declaration.VariableDeclaration
+import com.crzsc.plugin.andrasferenczi.declaration.canBeAssignedFromConstructor
 import com.intellij.ide.util.DefaultPsiElementCellRenderer
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.ui.DialogWrapper

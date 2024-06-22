@@ -1,10 +1,10 @@
 package com.crzsc.plugin.andrasferenczi.action
 
-import andrasferenczi.action.data.PerformAction
-import andrasferenczi.action.init.ActionData
-import andrasferenczi.action.init.tryCreateActionData
-import andrasferenczi.action.init.tryExtractDartClassDefinition
-import andrasferenczi.ext.*
+import com.crzsc.plugin.andrasferenczi.action.data.PerformAction
+import com.crzsc.plugin.andrasferenczi.action.init.ActionData
+import com.crzsc.plugin.andrasferenczi.action.init.tryCreateActionData
+import com.crzsc.plugin.andrasferenczi.action.init.tryExtractDartClassDefinition
+import com.crzsc.plugin.andrasferenczi.ext.*
 import com.crzsc.plugin.andrasferenczi.ext.findLineOffset
 import com.intellij.codeInsight.template.TemplateManager
 import com.intellij.openapi.actionSystem.AnAction
@@ -25,12 +25,11 @@ abstract class BaseAnAction : AnAction() {
     // Actions that change PSI elements should be
     override fun startInTransaction(): Boolean = true
 
+
+
     final override fun actionPerformed(event: AnActionEvent) {
-        UpdateColorsAction.log.debug("------------actionPerformed$event------------------")
         val actionData = tryCreateActionData(event) ?: return
-        UpdateColorsAction.log.debug("------------actionData$actionData------------------")
         val dartClass = tryExtractDartClassDefinition(actionData) ?: return
-        UpdateColorsAction.log.debug("------------dartClass$dartClass------------------")
 
         val performAction = this.processAction(
             event,

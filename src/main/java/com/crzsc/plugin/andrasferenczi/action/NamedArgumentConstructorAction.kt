@@ -1,15 +1,14 @@
-package andrasferenczi.action
+package com.crzsc.plugin.andrasferenczi.action
 
-import andrasferenczi.action.data.GenerationData
-import andrasferenczi.action.data.PerformAction
-import andrasferenczi.action.init.ActionData
-import andrasferenczi.action.utils.createConstructorDeleteCallWithUserPrompt
-import andrasferenczi.action.utils.selectFieldsWithDialog
-import andrasferenczi.configuration.ConfigurationDataManager
-import andrasferenczi.declaration.*
-import andrasferenczi.ext.psi.extractClassName
-import andrasferenczi.templater.*
-import com.crzsc.plugin.andrasferenczi.action.BaseAnAction
+import com.crzsc.plugin.andrasferenczi.action.data.GenerationData
+import com.crzsc.plugin.andrasferenczi.action.data.PerformAction
+import com.crzsc.plugin.andrasferenczi.action.init.ActionData
+import com.crzsc.plugin.andrasferenczi.action.utils.createConstructorDeleteCallWithUserPrompt
+import com.crzsc.plugin.andrasferenczi.action.utils.selectFieldsWithDialog
+import com.crzsc.plugin.andrasferenczi.configuration.ConfigurationDataManager
+import com.crzsc.plugin.andrasferenczi.declaration.*
+import com.crzsc.plugin.andrasferenczi.ext.psi.extractClassName
+import com.crzsc.plugin.andrasferenczi.templater.*
 import com.intellij.codeInsight.template.TemplateManager
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.jetbrains.lang.dart.psi.DartClassDefinition
@@ -23,7 +22,7 @@ class NamedArgumentConstructorAction : BaseAnAction() {
     ): PerformAction? {
         val declarations = selectFieldsWithDialog(actionData.project, dartClass) ?: return null
 
-        return Companion.processAction(
+        return processAction(
             GenerationData(actionData, dartClass, declarations)
         )
     }

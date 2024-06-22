@@ -1,16 +1,16 @@
-package andrasferenczi.action.my
+package com.crzsc.plugin.andrasferenczi.action.my
 
-import andrasferenczi.action.StaticActionProcessor
-import andrasferenczi.action.data.GenerationData
-import andrasferenczi.action.data.PerformAction
-import andrasferenczi.declaration.isNullable
-import andrasferenczi.declaration.variableName
-import andrasferenczi.ext.psi.extractClassName
-import andrasferenczi.ext.psi.findMethodsByName
-import andrasferenczi.templater.EqualsTemplateParams
-import andrasferenczi.templater.NamedVariableTemplateParamImpl
-import andrasferenczi.templater.TemplateConstants
-import andrasferenczi.templater.createEqualsTemplate
+import com.crzsc.plugin.andrasferenczi.action.StaticActionProcessor
+import com.crzsc.plugin.andrasferenczi.action.data.GenerationData
+import com.crzsc.plugin.andrasferenczi.action.data.PerformAction
+import com.crzsc.plugin.andrasferenczi.declaration.isNullable
+import com.crzsc.plugin.andrasferenczi.declaration.variableName
+import com.crzsc.plugin.andrasferenczi.ext.psi.extractClassName
+import com.crzsc.plugin.andrasferenczi.ext.psi.findMethodsByName
+import com.crzsc.plugin.andrasferenczi.templater.EqualsTemplateParams
+import com.crzsc.plugin.andrasferenczi.templater.NamedVariableTemplateParamImpl
+import com.crzsc.plugin.andrasferenczi.templater.TemplateConstants
+import com.crzsc.plugin.andrasferenczi.templater.createEqualsTemplate
 import com.intellij.codeInsight.template.TemplateManager
 import com.jetbrains.lang.dart.psi.DartClassDefinition
 

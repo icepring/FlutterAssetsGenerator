@@ -1,7 +1,7 @@
-package andrasferenczi.action.utils
+package com.crzsc.plugin.andrasferenczi.action.utils
 
-import andrasferenczi.ext.psi.findNormalFormalParameters
-import andrasferenczi.ext.psi.isNamedParameter
+import com.crzsc.plugin.andrasferenczi.ext.psi.findNormalFormalParameters
+import com.crzsc.plugin.andrasferenczi.ext.psi.isNamedParameter
 import com.jetbrains.lang.dart.psi.DartClass
 import com.jetbrains.lang.dart.psi.DartMethodDeclaration
 

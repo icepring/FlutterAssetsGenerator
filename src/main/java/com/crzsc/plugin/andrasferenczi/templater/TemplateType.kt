@@ -1,4 +1,4 @@
-package andrasferenczi.templater
+package com.crzsc.plugin.andrasferenczi.templater
 
 enum class TemplateType(
     val templateKey: String

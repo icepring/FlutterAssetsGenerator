@@ -1,7 +1,7 @@
-package andrasferenczi.action.init
+package com.crzsc.plugin.andrasferenczi.action.init
 
-import andrasferenczi.constants.Constants
-import andrasferenczi.ext.psi.findParentClassDefinition
+import com.crzsc.plugin.andrasferenczi.constants.Constants
+import com.crzsc.plugin.andrasferenczi.ext.psi.findParentClassDefinition
 import com.intellij.notification.Notification
 import com.intellij.notification.NotificationType
 import com.intellij.notification.Notifications

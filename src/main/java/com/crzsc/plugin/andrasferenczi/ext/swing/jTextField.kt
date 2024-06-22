@@ -1,4 +1,4 @@
-package andrasferenczi.ext.swing
+package com.crzsc.plugin.andrasferenczi.ext.swing
 
 import javax.swing.JTextField
 import javax.swing.event.DocumentEvent

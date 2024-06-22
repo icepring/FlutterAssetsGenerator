@@ -1,4 +1,4 @@
-package andrasferenczi.utils
+package com.crzsc.plugin.andrasferenczi.utils
 
 fun List<() -> Unit>.mergeCalls(): (() -> Unit)? =
     if (isEmpty())

@@ -27,7 +27,7 @@
 <!--        <projectConfigurable-->
 <!--                groupId="editor"-->
 <!--                instance="andrasferenczi.configuration.DataClassConfigurable"/>-->
-        <checkinHandlerFactory implementation="com.crzsc.plugin.git.LineFeedCheckinHandlerFactory"/>
+        <checkinHandlerFactory implementation="com.crzsc.plugin.git.LineBreakCheckinHandlerFactory"/>
 
     </extensions>
 
@@ -51,31 +51,22 @@
         <!--            <add-to-group group-id="ProjectViewPopupMenu" anchor="after" relative-to-action="WeighingNewGroup"/>-->
         <!--        </action>-->
 
-<!--        <action id="andrasferenczi.action.NamedArgumentConstructorAction"-->
-<!--                class="andrasferenczi.action.NamedArgumentConstructorAction"-->
+<!--        <action id="com.crzsc.plugin.andrasferenczi.action.NamedArgumentConstructorAction"-->
+<!--                class="com.crzsc.plugin.andrasferenczi.action.NamedArgumentConstructorAction"-->
 <!--                text="Named Argument Constructor">-->
 <!--            <add-to-group group-id="GenerateGroup"-->
 <!--                          anchor="after"-->
 <!--                          relative-to-action="Generate.Named.Constructor.Dart"/>-->
 <!--        </action>-->
-<!--        <action id="andrasferenczi.action.DartCopyWithAction"-->
-<!--                class="andrasferenczi.action.DartCopyWithAction"-->
+<!--        <action id="com.crzsc.plugin.andrasferenczi.action.DartCopyWithAction"-->
+<!--                class="com.crzsc.plugin.andrasferenczi.action.DartCopyWithAction"-->
 <!--                text="Copy">-->
 <!--            <add-to-group group-id="GenerateGroup"-->
 <!--                          anchor="after"-->
 <!--                          relative-to-action="Generate.Named.Constructor.Dart"/>-->
 <!--        </action>-->
-        <action id="andrasferenczi.action.MapAction"
-                class="andrasferenczi.action.MapAction"
-                icon="/icons/pluginIcon.svg"
-                text="getParameters">
-            <add-to-group group-id="GenerateGroup"
-                          anchor="after"
-                          relative-to-action="ImplementMethods"/>
-        </action>
-
-        <action id="actions."
-                class="andrasferenczi.action.MapAction"
+        <action id="transference.action.MapAction"
+                class="com.crzsc.plugin.andrasferenczi.action.MapAction"
                 icon="/icons/pluginIcon.svg"
                 text="getParameters">
             <add-to-group group-id="GenerateGroup"
@@ -95,7 +86,7 @@
 <!--                text="Data Class Section">-->
 <!--            <add-to-group group-id="GenerateGroup"-->
 <!--                          anchor="after"-->
-<!--                          relative-to-action="andrasferenczi.action.MapAction"/>-->
+<!--                          relative-to-action="com.crzsc.plugin.andrasferenczi.action.MapAction"/>-->
 <!--        </action>-->
 
     </actions>

@@ -1,4 +1,4 @@
-package andrasferenczi.ext.psi
+package com.crzsc.plugin.andrasferenczi.ext.psi
 
 import com.jetbrains.lang.dart.psi.DartDefaultFormalNamedParameter
 import com.jetbrains.lang.dart.psi.DartNormalFormalParameter

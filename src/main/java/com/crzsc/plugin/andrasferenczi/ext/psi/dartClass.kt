@@ -1,4 +1,4 @@
-package andrasferenczi.ext.psi
+package com.crzsc.plugin.andrasferenczi.ext.psi
 
 import com.jetbrains.lang.dart.psi.*
 import com.jetbrains.lang.dart.util.DartResolveUtil

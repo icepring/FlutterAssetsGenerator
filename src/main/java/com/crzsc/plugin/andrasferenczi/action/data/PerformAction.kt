@@ -1,6 +1,6 @@
-package andrasferenczi.action.data
+package com.crzsc.plugin.andrasferenczi.action.data
 
-import andrasferenczi.utils.mergeCalls
+import com.crzsc.plugin.andrasferenczi.utils.mergeCalls
 import com.intellij.codeInsight.template.Template
 
 class PerformAction(

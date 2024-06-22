@@ -1,4 +1,4 @@
-package andrasferenczi.action.init
+package com.crzsc.plugin.andrasferenczi.action.init
 
 import com.intellij.openapi.editor.Caret
 import com.intellij.openapi.editor.Editor

@@ -1,4 +1,4 @@
-package andrasferenczi.ext
+package com.crzsc.plugin.andrasferenczi.ext
 
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.command.CommandProcessor

@@ -1,7 +1,7 @@
-package andrasferenczi.ext
+package com.crzsc.plugin.andrasferenczi.ext
 
-import andrasferenczi.templater.TemplateConstants
-import andrasferenczi.templater.TemplateType
+import com.crzsc.plugin.andrasferenczi.templater.TemplateConstants
+import com.crzsc.plugin.andrasferenczi.templater.TemplateType
 import com.intellij.codeInsight.template.Template
 import com.intellij.codeInsight.template.TemplateManager
 

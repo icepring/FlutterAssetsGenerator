@@ -1,7 +1,7 @@
-package andrasferenczi.action.utils
+package com.crzsc.plugin.andrasferenczi.action.utils
 
-import andrasferenczi.templater.TemplateConstants
-import andrasferenczi.utils.mergeCalls
+import com.crzsc.plugin.andrasferenczi.templater.TemplateConstants
+import com.crzsc.plugin.andrasferenczi.utils.mergeCalls
 import com.jetbrains.lang.dart.psi.DartClass
 
 fun createMapDeleteCall(
