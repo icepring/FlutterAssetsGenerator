@@ -9,6 +9,7 @@ import andrasferenczi.configuration.ConfigurationDataManager
 import andrasferenczi.declaration.*
 import andrasferenczi.ext.psi.extractClassName
 import andrasferenczi.templater.*
+import com.crzsc.plugin.andrasferenczi.action.BaseAnAction
 import com.intellij.codeInsight.template.TemplateManager
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.jetbrains.lang.dart.psi.DartClassDefinition

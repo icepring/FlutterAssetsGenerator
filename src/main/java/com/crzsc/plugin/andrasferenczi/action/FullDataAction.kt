@@ -17,6 +17,7 @@ import andrasferenczi.ext.psi.isTopClassLevel
 import andrasferenczi.templater.TemplateConstants
 import andrasferenczi.templater.TemplateType
 import andrasferenczi.traversal.TraversalType
+import com.crzsc.plugin.andrasferenczi.action.BaseAnAction
 import com.intellij.codeInsight.template.Template
 import com.intellij.codeInsight.template.TemplateManager
 import com.intellij.openapi.actionSystem.AnActionEvent

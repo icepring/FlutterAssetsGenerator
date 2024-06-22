@@ -15,6 +15,7 @@ import andrasferenczi.templater.AliasedVariableTemplateParam
 import andrasferenczi.templater.AliasedVariableTemplateParamImpl
 import andrasferenczi.templater.CopyWithTemplateParams
 import andrasferenczi.templater.createCopyWithConstructorTemplate
+import com.crzsc.plugin.andrasferenczi.action.BaseAnAction
 import com.intellij.codeInsight.template.TemplateManager
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.jetbrains.lang.dart.psi.DartClassDefinition

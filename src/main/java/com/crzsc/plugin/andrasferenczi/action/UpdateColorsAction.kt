@@ -1,6 +1,5 @@
 package com.crzsc.plugin.andrasferenczi.action
 
-import andrasferenczi.action.BaseAnAction
 import andrasferenczi.action.StaticActionProcessor
 import andrasferenczi.action.data.GenerationData
 import andrasferenczi.action.data.PerformAction
@@ -18,6 +17,7 @@ import andrasferenczi.templater.createColorTemplate
 import com.crzsc.plugin.andrasferenczi.ext.contains
 import com.intellij.codeInsight.template.TemplateManager
 import com.intellij.openapi.actionSystem.AnActionEvent
+import com.intellij.openapi.diagnostic.Logger
 import com.jetbrains.lang.dart.psi.DartClassDefinition
 
 class UpdateColorsAction : BaseAnAction() {
@@ -27,7 +27,7 @@ class UpdateColorsAction : BaseAnAction() {
         dartClass: DartClassDefinition
     ): PerformAction {
         val declarations = DeclarationExtractor.extractDeclarationsFromClass(dartClass)
-
+        log.debug("------------start$declarations------------------")
 
         return Companion.processAction(
             GenerationData(actionData, dartClass, declarations)
@@ -35,7 +35,7 @@ class UpdateColorsAction : BaseAnAction() {
     }
 
     companion object : StaticActionProcessor {
-
+        val log = Logger.getInstance(UpdateColorsAction::class.java)
         override fun processAction(generationData: GenerationData): PerformAction {
             val (actionData, dartClass, declarations) = generationData
 
@@ -52,7 +52,6 @@ class UpdateColorsAction : BaseAnAction() {
                 }.filter {
                     !dartFile.contains("AppColorsKey.${it.variableName}")
                 }
-
             val templateManager = TemplateManager.getInstance(project)
             val configuration = ConfigurationDataManager.retrieveData(project)
             val dartClassName = dartClass.extractClassName()
@@ -64,7 +63,7 @@ class UpdateColorsAction : BaseAnAction() {
                     variables = variableNames
                 )
             )
-
+            log.debug("------------${variableNames}------------------")
             return PerformAction(
                 null,
                 template, true

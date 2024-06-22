@@ -1,4 +1,4 @@
-package andrasferenczi.action
+package com.crzsc.plugin.andrasferenczi.action
 
 import andrasferenczi.action.data.PerformAction
 import andrasferenczi.action.init.ActionData
@@ -12,7 +12,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.psi.PsiDocumentManager
 import com.jetbrains.lang.dart.psi.DartClassDefinition
 import org.jetbrains.kotlin.idea.core.moveCaret
-import org.jetbrains.kotlin.idea.util.ifFalse
+
+import com.intellij.openapi.diagnostic.Logger
 
 abstract class BaseAnAction : AnAction() {
 
@@ -25,8 +26,11 @@ abstract class BaseAnAction : AnAction() {
     override fun startInTransaction(): Boolean = true
 
     final override fun actionPerformed(event: AnActionEvent) {
+        UpdateColorsAction.log.debug("------------actionPerformed$event------------------")
         val actionData = tryCreateActionData(event) ?: return
+        UpdateColorsAction.log.debug("------------actionData$actionData------------------")
         val dartClass = tryExtractDartClassDefinition(actionData) ?: return
+        UpdateColorsAction.log.debug("------------dartClass$dartClass------------------")
 
         val performAction = this.processAction(
             event,
