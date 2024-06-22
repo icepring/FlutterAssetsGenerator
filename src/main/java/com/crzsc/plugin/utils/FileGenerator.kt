@@ -5,6 +5,7 @@ import com.crzsc.plugin.utils.PluginUtils.toLowCamelCase
 import com.crzsc.plugin.utils.PluginUtils.upperCaseFirst
 import com.intellij.openapi.application.ApplicationManager
 import com.intellij.openapi.command.WriteCommandAction
+import com.intellij.openapi.module.ModuleUtilCore
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessModuleDir
 import com.intellij.openapi.vfs.VirtualFile
@@ -13,7 +14,6 @@ import com.intellij.psi.PsiManager
 import com.intellij.psi.util.PsiTreeUtil
 import io.flutter.utils.FlutterModuleUtils
 import org.jetbrains.kotlin.idea.core.util.toPsiFile
-import org.jetbrains.kotlin.idea.util.findModule
 import org.jetbrains.yaml.YAMLElementGenerator
 import org.jetbrains.yaml.psi.YAMLFile
 import org.jetbrains.yaml.psi.YAMLMapping
@@ -184,7 +184,7 @@ class FileGenerator(private val project: Project) {
 //            println(paths)
             val moduleAssets = FileHelperNew.tryGetAssetsList(module.map)
             if (moduleAssets != null) {
-                val moduleDir = file.findModule(project)?.guessModuleDir()
+                val moduleDir = ModuleUtilCore.findModuleForFile(file, project)?.guessModuleDir()
                 println(moduleDir?.path)
                 moduleAssets.removeIf {
                     var parentPath = moduleDir?.path

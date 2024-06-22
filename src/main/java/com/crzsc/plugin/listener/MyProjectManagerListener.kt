@@ -10,13 +10,13 @@ class MyProjectManagerListener : ProjectManagerListener {
         super.projectClosed(project)
     }
 
-    override fun projectOpened(project: Project) {
-        super.projectOpened(project)
-        val treeListener = PsiTreeListener(project)
-        eventsMap[project] = treeListener
-        PsiManager.getInstance(project).addPsiTreeChangeListener(
-                treeListener)
-    }
+//    override fun projectOpened(project: Project) {
+//        super.projectOpened(project)
+//        val treeListener = PsiTreeListener(project)
+//        eventsMap[project] = treeListener
+//        PsiManager.getInstance(project).addPsiTreeChangeListener(
+//                treeListener)
+//    }
 
     override fun projectClosing(project: Project) {
         super.projectClosing(project)

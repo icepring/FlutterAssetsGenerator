@@ -105,16 +105,34 @@ private fun DartVarDeclarationList.extractEntireDeclarations(): List<VariableDec
 
 private val privateToUniquePublicVariableNameTransformations = listOf<(variableName: String) -> String>(
     // Remove starting underscore and make it variable like
-    { it.substring(1).decapitalize() },
+    { it.substring(1).replaceFirstChar { it1 -> it1.lowercase(Locale.getDefault()) } },
     // Private
-    { "p" + it.substring(1).capitalize() },
+    {
+        "p" + it.substring(1)
+            .replaceFirstChar { it1 -> if (it1.isLowerCase()) it1.titlecase(Locale.getDefault()) else it1.toString() }
+    },
     // mVariable for the Android <3
-    { "m" + it.substring(1).capitalize() },
+    {
+        "m" + it.substring(1)
+            .replaceFirstChar { it1 -> if (it1.isLowerCase()) it1.titlecase(Locale.getDefault()) else it1.toString() }
+    },
     // Unique
-    { "u" + it.substring(1).capitalize() },
-    { "p_" + it.substring(1).capitalize() },
-    { "m_" + it.substring(1).capitalize() },
-    { "u_" + it.substring(1).capitalize() }
+    {
+        "u" + it.substring(1)
+            .replaceFirstChar { it1 -> if (it1.isLowerCase()) it1.titlecase(Locale.getDefault()) else it1.toString() }
+    },
+    {
+        "p_" + it.substring(1)
+            .replaceFirstChar { it1 -> if (it1.isLowerCase()) it1.titlecase(Locale.getDefault()) else it1.toString() }
+    },
+    {
+        "m_" + it.substring(1)
+            .replaceFirstChar { it1 -> if (it1.isLowerCase()) it1.titlecase(Locale.getDefault()) else it1.toString() }
+    },
+    {
+        "u_" + it.substring(1)
+            .replaceFirstChar { it1 -> if (it1.isLowerCase()) it1.titlecase(Locale.getDefault()) else it1.toString() }
+    }
 )
 
 // Function keeps name if not private

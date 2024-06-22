@@ -5,10 +5,10 @@ import com.intellij.openapi.module.Module
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessModuleDir
 import com.intellij.openapi.project.modifyModules
+import com.intellij.openapi.project.modules
 import com.intellij.openapi.vfs.VirtualFile
 import io.flutter.pub.PubRoot
 import io.flutter.utils.FlutterModuleUtils
-import org.jetbrains.kotlin.idea.util.projectStructure.allModules
 import org.jetbrains.kotlin.konan.file.File
 import org.yaml.snakeyaml.Yaml
 import java.io.FileInputStream
@@ -25,7 +25,7 @@ object FileHelperNew {
      */
     @JvmStatic
     fun getAssets(project: Project): List<ModulePubSpecConfig> {
-        val modules = project.allModules()
+        val modules = project.modules.asList()
 
         val folders = mutableListOf<ModulePubSpecConfig>()
         for (module in modules) {
@@ -77,7 +77,7 @@ object FileHelperNew {
                                         }
                                         val assetVFile = moduleDir.findChild(assetsPath)
                                             ?: moduleDir.createChildDirectory(this, assetsPath)
-                                        if (!assetVFiles.contains(assetVFile) ) {
+                                        if (!assetVFiles.contains(assetVFile)) {
                                             assetVFiles.add(assetVFile)
                                         }
                                     } else {
@@ -222,7 +222,7 @@ object FileHelperNew {
 
     fun getGeneratedFileName(config: ModulePubSpecConfig): String =
         readSetting(config, Constants.KEY_OUTPUT_FILENAME) as? String ?: PluginSetting.instance.fileName
-        ?: Constants.DEFAULT_CLASS_NAME.toLowerCase()
+        ?: Constants.DEFAULT_CLASS_NAME.lowercase(Locale.getDefault())
 
 }
 

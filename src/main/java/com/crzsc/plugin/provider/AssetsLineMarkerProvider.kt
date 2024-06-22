@@ -16,8 +16,8 @@ import com.intellij.ui.scale.ScaleContext
 import com.intellij.util.ImageLoader
 import com.intellij.util.SVGLoader
 import io.flutter.utils.FlutterModuleUtils
+import org.jetbrains.kotlin.idea.base.util.module
 import org.jetbrains.kotlin.idea.refactoring.formatPsiClass
-import org.jetbrains.kotlin.idea.util.module
 import java.awt.Image
 import javax.swing.Icon
 import javax.swing.ImageIcon
@@ -48,7 +48,7 @@ class AssetsLineMarkerProvider : LineMarkerProvider {
                 assetName, true
             ) || element.containingFile.name.equals(
                 "assets.dart", true
-            )|| element.containingFile.name.equals(
+            ) || element.containingFile.name.equals(
                 "r.dart", true
             )
             if (filenameCorrect) {
@@ -117,7 +117,7 @@ class AssetsLineMarkerProvider : LineMarkerProvider {
         element: PsiElement, anchor: PsiElement,
         vFile: VirtualFile
     ): LineMarkerInfo<*> {
-        val image = ImageLoader.loadFromStream(vFile.inputStream).getScaledInstance(16,16,Image.SCALE_SMOOTH)
+        val image = ImageLoader.loadFromStream(vFile.inputStream)?.getScaledInstance(16,16,Image.SCALE_SMOOTH)
         val imageIcon = ImageIcon(image)
         val icon: Icon =imageIcon
 //        IconLoader.getIcon()
