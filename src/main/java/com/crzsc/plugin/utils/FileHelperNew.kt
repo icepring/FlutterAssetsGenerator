@@ -4,11 +4,10 @@ import com.crzsc.plugin.setting.PluginSetting
 import com.intellij.openapi.module.Module
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.project.guessModuleDir
-import com.intellij.openapi.project.modifyModules
-import com.intellij.openapi.project.modules
 import com.intellij.openapi.vfs.VirtualFile
 import io.flutter.pub.PubRoot
 import io.flutter.utils.FlutterModuleUtils
+import org.jetbrains.kotlin.idea.util.projectStructure.allModules
 import org.jetbrains.kotlin.konan.file.File
 import org.yaml.snakeyaml.Yaml
 import java.io.FileInputStream
@@ -25,8 +24,7 @@ object FileHelperNew {
      */
     @JvmStatic
     fun getAssets(project: Project): List<ModulePubSpecConfig> {
-        val modules = project.modules.asList()
-
+        val modules = project.allModules()
         val folders = mutableListOf<ModulePubSpecConfig>()
         for (module in modules) {
             if (FlutterModuleUtils.isFlutterModule(module)) {
@@ -222,7 +220,7 @@ object FileHelperNew {
 
     fun getGeneratedFileName(config: ModulePubSpecConfig): String =
         readSetting(config, Constants.KEY_OUTPUT_FILENAME) as? String ?: PluginSetting.instance.fileName
-        ?: Constants.DEFAULT_CLASS_NAME.lowercase(Locale.getDefault())
+        ?: Constants.DEFAULT_CLASS_NAME.toLowerCase(Locale.getDefault())
 
 }
 

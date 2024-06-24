@@ -22,7 +22,7 @@
         <!--        行标记-->
         <codeInsight.lineMarkerProvider language="Dart"
                                         implementationClass="com.crzsc.plugin.provider.AssetsLineMarkerProvider"/>
-        <postStartupActivity  implementation="com.crzsc.plugin.listener.MyProjectManagerListenerV2"/>
+<!--        <postStartupActivity  implementation="com.crzsc.plugin.listener.MyProjectManagerListenerV2"/>-->
 
 <!--        <projectConfigurable-->
 <!--                groupId="editor"-->
@@ -32,8 +32,8 @@
     </extensions>
 
     <applicationListeners>
-<!--        <listener class="com.crzsc.plugin.listener.MyProjectManagerListener"-->
-<!--                  topic="com.intellij.openapi.project.ProjectManagerListener"/>-->
+        <listener class="com.crzsc.plugin.listener.MyProjectManagerListener"
+                  topic="com.intellij.openapi.project.ProjectManagerListener"/>
 
     </applicationListeners>
 

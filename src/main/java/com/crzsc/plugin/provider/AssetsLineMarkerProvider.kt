@@ -6,7 +6,6 @@ import com.crzsc.plugin.utils.isSvgExtension
 import com.intellij.codeInsight.daemon.LineMarkerInfo
 import com.intellij.codeInsight.daemon.LineMarkerProvider
 import com.intellij.openapi.editor.markup.GutterIconRenderer
-import com.intellij.openapi.util.IconLoader
 import com.intellij.openapi.vfs.LocalFileSystem
 import com.intellij.openapi.vfs.VirtualFile
 import com.intellij.psi.PsiElement
@@ -16,8 +15,7 @@ import com.intellij.ui.scale.ScaleContext
 import com.intellij.util.ImageLoader
 import com.intellij.util.SVGLoader
 import io.flutter.utils.FlutterModuleUtils
-import org.jetbrains.kotlin.idea.base.util.module
-import org.jetbrains.kotlin.idea.refactoring.formatPsiClass
+import org.jetbrains.kotlin.idea.util.module
 import java.awt.Image
 import javax.swing.Icon
 import javax.swing.ImageIcon
@@ -30,7 +28,6 @@ class AssetsLineMarkerProvider : LineMarkerProvider {
 
     override fun getLineMarkerInfo(element: PsiElement): LineMarkerInfo<*>? {
         val module = element.module
-
         if (!FlutterModuleUtils.isFlutterModule(module)) return null
         val elementType = (element as? LeafPsiElement?)?.elementType?.toString()
         if (elementType == "REGULAR_STRING_PART"

@@ -7,7 +7,7 @@ import com.crzsc.plugin.andrasferenczi.action.init.tryExtractDartClassDefinition
 import com.crzsc.plugin.andrasferenczi.ext.*
 import com.crzsc.plugin.andrasferenczi.ext.findLineOffset
 import com.intellij.codeInsight.template.TemplateManager
-import com.intellij.openapi.actionSystem.ActionUpdateThread
+//import com.intellij.openapi.actionSystem.ActionUpdateThread
 import com.intellij.openapi.actionSystem.AnAction
 import com.intellij.openapi.actionSystem.AnActionEvent
 import com.intellij.psi.PsiDocumentManager
@@ -21,9 +21,8 @@ abstract class BaseAnAction : AnAction() {
             event.extractOuterDartClass() !== null
     }
 
-    override fun getActionUpdateThread(): ActionUpdateThread {
-        return ActionUpdateThread.BGT
-    }
+    // Actions that change PSI elements should be
+    override fun startInTransaction(): Boolean = true
 
     final override fun actionPerformed(event: AnActionEvent) {
         val actionData = tryCreateActionData(event) ?: return

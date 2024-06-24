@@ -14,7 +14,7 @@ import java.util.*
 @State(name = "com.crzsc.plugin.setting.PluginSetting", storages = [Storage("FlutterAssetsGenerator.xml")])
 class PluginSetting : PersistentStateComponent<PluginSetting> {
     var className: String? = Constants.DEFAULT_CLASS_NAME
-    var fileName: String? = Constants.DEFAULT_CLASS_NAME.lowercase(Locale.getDefault())
+    var fileName: String? = Constants.DEFAULT_CLASS_NAME.toLowerCase(Locale.getDefault())
     var filePath: String? = Constants.DEFAULT_OUTPUT_DIR
     var filenameSplitPattern: String? = Constants.DEFAULT_FILENAME_SPLIT_PATTERN
     var namedWithParent = true
