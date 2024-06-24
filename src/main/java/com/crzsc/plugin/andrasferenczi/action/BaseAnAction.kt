@@ -77,7 +77,7 @@ abstract class BaseAnAction : AnAction() {
                         }
                         dartFile.findLineOffset(start, end).let {
                             if (it > 0) {
-                                editor.moveCaret(it)
+                                editor.caretModel.moveToOffset(it)
                             }
                         }
                         templateManager.startTemplate(editor, template)
