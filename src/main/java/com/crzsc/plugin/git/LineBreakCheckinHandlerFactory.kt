@@ -6,7 +6,6 @@ import com.intellij.openapi.vcs.changes.CommitContext
 import com.intellij.openapi.vcs.checkin.CheckinHandler
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory
 import com.intellij.openapi.vfs.VirtualFile
-import org.jetbrains.kotlin.idea.util.projectStructure.allModules
 
 class LineBreakCheckinHandlerFactory : CheckinHandlerFactory() {
     override fun createHandler(panel: CheckinProjectPanel, commitContext: CommitContext): CheckinHandler {
@@ -18,7 +17,8 @@ class LineBreakCheckinHandlerFactory : CheckinHandlerFactory() {
                     return ReturnResult.COMMIT
                 }
                 val files = panel.virtualFiles
-                panel.project.allModules()
+                files.let { it.toString() }
+                files.also { toString() }
                 val checker = LineFeedChecker(panel.project)
                 val results = checker.checkLineFeeds(files)
 
