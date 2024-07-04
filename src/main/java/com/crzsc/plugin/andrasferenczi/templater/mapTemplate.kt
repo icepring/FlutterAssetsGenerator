@@ -53,7 +53,7 @@ private fun Template.addToMap(params: MapTemplateParams) {
 
     isToReformat = true
 
-    addTextSegment("Map<String, dynamic>")
+    addTextSegment("Map<String, dynamic>?")
     addSpace()
     addTextSegment(TemplateConstants.TO_MAP_METHOD_NAME)
     withParentheses {
