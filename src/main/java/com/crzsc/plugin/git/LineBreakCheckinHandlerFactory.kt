@@ -17,8 +17,6 @@ class LineBreakCheckinHandlerFactory : CheckinHandlerFactory() {
                     return ReturnResult.COMMIT
                 }
                 val files = panel.virtualFiles
-                files.let { it.toString() }
-                files.also { toString() }
                 val checker = LineFeedChecker(panel.project)
                 val results = checker.checkLineFeeds(files)
 
