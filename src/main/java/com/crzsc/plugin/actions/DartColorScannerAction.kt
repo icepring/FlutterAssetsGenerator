@@ -102,42 +102,47 @@ class DartColorScannerAction : AnAction() {
     }
 
     private fun findAndReplaceColorsExtInFile(project: Project, file: VirtualFile, consoleView: ConsoleView) {
-        val psiFile = PsiManager.getInstance(project).findFile(file) as? DartFile ?: return
 
-        val fileContent = psiFile.text
-        val pattern = Pattern.compile("ColorsExt\\.color([A-Fa-f0-9]{8})")
-        val matcher = pattern.matcher(fileContent)
-        var hasReplacements = false
+        ApplicationManager.getApplication().invokeLater {
+            val psiFile = PsiManager.getInstance(project).findFile(file) as? DartFile ?: return@invokeLater
 
-        val newContent = StringBuffer()
-        while (matcher.find()) {
-            val colorCode = matcher.group(1)
-            if(!mappings.containsKey(colorCode)){
-                continue
+            val fileContent = psiFile.text
+            val pattern = Pattern.compile("ColorsExt\\.color([A-Fa-f0-9]{8})")
+            val matcher = pattern.matcher(fileContent)
+            var hasReplacements = false
+
+            val newContent = StringBuffer()
+            while (matcher.find()) {
+                val colorCode = matcher.group(1)
+                if(!mappings.containsKey(colorCode)){
+                    continue
+                }
+                if (!hasReplacements) {
+                    newContent.append("import 'package:shisankeisei/theme/color/theme_colors.dart';\n")
+                    hasReplacements = true
+                }
+                matcher.appendReplacement(newContent, "ThemeColors.${mappings[colorCode]}")
             }
-            if (!hasReplacements) {
-                newContent.append("import 'package:shisankeisei/theme/color/theme_colors.dart';\n")
-                hasReplacements = true
+            if (!hasReplacements){
+                return@invokeLater
             }
-            matcher.appendReplacement(newContent, "ThemeColors.${mappings[colorCode]}")
-        }
-        if (!hasReplacements){
-            return
+
+            matcher.appendTail(newContent)
+
+            // 保存替换后的内容到文件
+            val document = PsiDocumentManager.getInstance(project).getDocument(psiFile)
+            if (document != null) {
+                WriteCommandAction.runWriteCommandAction(project) {
+                    document.setText(newContent.toString())
+                    // 格式化代码
+                    PsiDocumentManager.getInstance(project).commitDocument(document)
+                    val codeStyleManager = com.intellij.psi.codeStyle.CodeStyleManager.getInstance(project)
+                    codeStyleManager.reformat(psiFile)
+                }
+            }
+            consoleView.print("Completed ${file.path}\n", ConsoleViewContentType.NORMAL_OUTPUT)
         }
 
-        matcher.appendTail(newContent)
 
-        // 保存替换后的内容到文件
-        val document = PsiDocumentManager.getInstance(project).getDocument(psiFile)
-        if (document != null) {
-            WriteCommandAction.runWriteCommandAction(project) {
-                document.setText(newContent.toString())
-                // 格式化代码
-                PsiDocumentManager.getInstance(project).commitDocument(document)
-                val codeStyleManager = com.intellij.psi.codeStyle.CodeStyleManager.getInstance(project)
-                codeStyleManager.reformat(psiFile)
-            }
-        }
-        consoleView.print("Completed ${file.path}\n", ConsoleViewContentType.NORMAL_OUTPUT)
     }
 }

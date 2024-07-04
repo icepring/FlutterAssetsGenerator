@@ -1,5 +1,10 @@
 <!-- Keep a Changelog guide -> https://keepachangelog.com -->
 
+## [1.0.3]
+### ColorsExt to ThemeColors
+- color version migration
+- deprecated color generation
+
 ## [1.0.2]
 ### for create color map
 - generate color
